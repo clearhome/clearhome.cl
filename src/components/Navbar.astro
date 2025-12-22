@@ -1,0 +1,128 @@
+---
+
+---
+
+<div class="bg-brand-dark text-white py-2 px-4 text-sm hidden md:block">
+    <div class="container mx-auto flex justify-between items-center">
+        <span
+            ><i class="fas fa-map-marker-alt mr-2"></i> Coquimbo y La Serena, IV Región</span
+        >
+        <div class="space-x-4">
+            <a
+                href="mailto:contacto@clearhome.cl"
+                class="hover:text-brand-accent transition"
+                ><i class="fas fa-envelope mr-1"></i> contacto@clearhome.cl</a
+            >
+            <a
+                href="tel:+56931216071"
+                class="font-bold hover:text-brand-accent transition"
+                ><i class="fas fa-phone mr-1"></i> +56 9 3121 6071</a
+            >
+        </div>
+    </div>
+</div>
+
+<header class="bg-white shadow-md sticky top-0 z-40">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+        <!-- Logo -->
+        <a href="/" class="flex items-center gap-3 group">
+            <div class="relative">
+                <i class="fas fa-home text-4xl text-brand-blue drop-shadow-sm"
+                ></i>
+                <div
+                    class="absolute -bottom-2 -right-3 bg-white rounded-full p-1 border border-gray-100 shadow-sm"
+                >
+                    <i
+                        class="fas fa-broom text-xl text-brand-accent group-hover:-rotate-12 transition-transform duration-300"
+                    ></i>
+                </div>
+            </div>
+            <span
+                class="text-3xl font-black text-brand-dark tracking-tighter uppercase italic pr-2 inline-block"
+            >
+                Clear<span
+                    class="bg-gradient-to-r from-brand-accent via-yellow-400 to-yellow-600 bg-clip-text text-transparent inline-block pr-4 py-2"
+                    >Home</span
+                >
+            </span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <nav class="hidden md:flex space-x-8 font-medium items-center">
+            <a
+                href="#inicio"
+                class="text-gray-600 hover:text-brand-blue transition">Inicio</a
+            >
+            <a
+                href="#servicios"
+                class="text-gray-600 hover:text-brand-blue transition"
+                >Servicios</a
+            >
+            <a
+                href="#nosotros"
+                class="text-gray-600 hover:text-brand-blue transition"
+                >Por qué Nosotros</a
+            >
+            <a
+                href="#contacto"
+                class="px-5 py-2 bg-brand-blue text-white rounded-full hover:bg-brand-dark transition shadow-lg transform hover:-translate-y-0.5"
+            >
+                Cotizar Ahora
+            </a>
+        </nav>
+
+        <!-- Mobile Menu Button -->
+        <button
+            id="mobile-menu-btn"
+            class="md:hidden text-brand-blue text-2xl focus:outline-none p-2"
+            aria-label="Abrir menú"
+        >
+            <i class="fas fa-bars"></i>
+        </button>
+    </div>
+
+    <!-- Mobile Menu Dropdown -->
+    <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-white border-t p-4 space-y-3 shadow-lg absolute w-full z-50"
+    >
+        <a
+            href="#inicio"
+            class="block text-gray-800 hover:text-brand-blue py-2 mobile-link"
+            >Inicio</a
+        >
+        <a
+            href="#servicios"
+            class="block text-gray-800 hover:text-brand-blue py-2 mobile-link"
+            >Servicios</a
+        >
+        <a
+            href="#nosotros"
+            class="block text-gray-800 hover:text-brand-blue py-2 mobile-link"
+            >Por qué Nosotros</a
+        >
+        <a
+            href="#contacto"
+            class="block text-brand-blue font-bold py-2 border-t mt-2 mobile-link"
+            >Solicitar Cotización</a
+        >
+    </div>
+</header>
+
+<script>
+    const btn = document.getElementById("mobile-menu-btn");
+    const menu = document.getElementById("mobile-menu");
+    const links = document.querySelectorAll(".mobile-link");
+
+    if (btn && menu) {
+        btn.addEventListener("click", () => {
+            menu.classList.toggle("hidden");
+        });
+
+        links.forEach((link) => {
+            link.addEventListener("click", () => {
+                menu.classList.add("hidden");
+            });
+        });
+    }
+</script>

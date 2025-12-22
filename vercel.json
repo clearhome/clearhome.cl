@@ -1,0 +1,9 @@
+{
+    "framework": "astro",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "regions": [
+        "sfo1"
+    ],
+    "cleanUrls": true
+}

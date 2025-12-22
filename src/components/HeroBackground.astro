@@ -1,0 +1,77 @@
+---
+
+---
+
+<div class="absolute inset-0 z-0 overflow-hidden" id="hero-slider">
+    <!-- Overlay for text readability -->
+    <div
+        class="absolute inset-0 bg-gradient-to-r from-brand-dark/95 to-brand-blue/80 z-10"
+    >
+    </div>
+
+    <!-- Slides -->
+    <div
+        class="absolute inset-0 slide opacity-0 transition-opacity duration-1000 ease-in-out"
+    >
+        <img
+            src="/images/hero-1.png"
+            alt="Office Cleaning"
+            class="w-full h-full object-cover animate-ken-burns"
+        />
+    </div>
+    <div
+        class="absolute inset-0 slide opacity-0 transition-opacity duration-1000 ease-in-out"
+    >
+        <img
+            src="/images/hero-2.png"
+            alt="Apartment Cleaning"
+            class="w-full h-full object-cover animate-ken-burns"
+        />
+    </div>
+    <div
+        class="absolute inset-0 slide opacity-0 transition-opacity duration-1000 ease-in-out"
+    >
+        <img
+            src="/images/hero-3.png"
+            alt="Meeting Room Cleaning"
+            class="w-full h-full object-cover animate-ken-burns"
+        />
+    </div>
+</div>
+
+<style>
+    @keyframes ken-burns {
+        0% {
+            transform: scale(1);
+        }
+        100% {
+            transform: scale(1.15);
+        }
+    }
+    .animate-ken-burns {
+        animation: ken-burns 20s ease-out infinite alternate;
+    }
+    /* Make first slide visible initially to prevent flash */
+    .slide:first-child {
+        opacity: 1;
+    }
+</style>
+
+<script>
+    const slides = document.querySelectorAll(".slide");
+    let currentSlide = 0;
+
+    // Initial State
+    slides[0].classList.remove("opacity-0");
+
+    setInterval(() => {
+        // Fade out current
+        slides[currentSlide].classList.add("opacity-0");
+
+        // Next slide
+        currentSlide = (currentSlide + 1) % slides.length;
+
+        // Fade in next
+        slides[currentSlide].classList.remove("opacity-0");
+    }, 6000); // Change every 6 seconds
+</script>

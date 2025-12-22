@@ -1,0 +1,564 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import ContactForm from "../components/ContactForm";
+import HeroBackground from "../components/HeroBackground.astro";
+import WhatsAppButton from "../components/WhatsAppButton.astro";
+import StickyMobileCTA from "../components/StickyMobileCTA.astro";
+import TrustStrip from "../components/TrustStrip.astro";
+import ReviewCarousel from "../components/ReviewCarousel";
+---
+
+<Layout title="ClearHome | Limpieza Profesional en Coquimbo y La Serena">
+    <Navbar />
+
+    <!-- HERO SECTION 2.0 -->
+    <section
+        id="inicio"
+        class="relative min-h-[700px] flex items-center pt-10 pb-20 overflow-hidden"
+    >
+        <HeroBackground />
+
+        <div class="container mx-auto px-4 relative z-20">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <!-- Left Content -->
+                <div class="lg:w-1/2 text-white fade-in-section">
+                    <div
+                        class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20"
+                    >
+                        <span
+                            class="w-2 h-2 rounded-full bg-green-400 animate-pulse"
+                        ></span>
+                        <span class="text-sm font-medium tracking-wide"
+                            >Disponibilidad Inmediata en IV Región</span
+                        >
+                    </div>
+
+                    <h1
+                        class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 drop-shadow-xl text-balance"
+                    >
+                        Tu tiempo es oro, <br />
+                        <span class="text-brand-accent"
+                            >tu limpieza es nuestra.</span
+                        >
+                    </h1>
+
+                    <p
+                        class="text-lg md:text-xl mb-8 text-gray-100 leading-relaxed font-light max-w-lg"
+                    >
+                        Expertos en limpieza de alta gama para hogares y
+                        oficinas. Olvídate del aseo y disfruta de espacios
+                        impecables con total garantía.
+                    </p>
+
+                    <!-- Mobile Only Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 lg:hidden">
+                        <a
+                            href="#contacto"
+                            class="bg-brand-accent text-brand-dark font-bold py-4 px-8 rounded-xl text-center shadow-lg shadow-brand-accent/20"
+                        >
+                            Cotizar Ahora
+                        </a>
+                        <a
+                            href="https://wa.me/56931216071"
+                            class="bg-green-500 text-white font-bold py-4 px-8 rounded-xl text-center shadow-lg flex items-center justify-center gap-2"
+                        >
+                            <i class="fab fa-whatsapp text-xl"></i> WhatsApp
+                        </a>
+                    </div>
+
+                    <!-- Trust Badges (Desktop) -->
+                    <div class="hidden lg:flex gap-8 mt-12 opacity-80">
+                        <div class="flex items-center gap-3">
+                            <i
+                                class="fas fa-shield-alt text-3xl text-brand-accent"
+                            ></i>
+                            <span class="text-sm font-semibold leading-tight"
+                                >Personal<br />Verificado</span
+                            >
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <i class="fas fa-star text-3xl text-brand-accent"
+                            ></i>
+                            <span class="text-sm font-semibold leading-tight"
+                                >5 Estrellas<br />en Google</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Form (Desktop Only mainly, but visible on tablet) -->
+                <div
+                    class="lg:w-1/2 w-full lg:max-w-md ml-auto fade-in-section"
+                    style="transition-delay: 200ms;"
+                >
+                    <div
+                        class="bg-white p-8 rounded-2xl shadow-2xl border-t-8 border-brand-accent relative overflow-hidden"
+                    >
+                        <div class="absolute top-0 right-0 p-4 opacity-5">
+                            <i class="fas fa-sparkles text-8xl text-brand-blue"
+                            ></i>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-gray-800 mb-2">
+                            ¡Cotiza Gratis en Segundos!
+                        </h3>
+                        <p class="text-gray-600 mb-6 text-sm">
+                            Déjanos tus datos y recibe un presupuesto
+                            personalizado hoy mismo.
+                        </p>
+
+                        <ContactForm client:visible />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <TrustStrip />
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 fade-in-section">
+                <span
+                    class="text-brand-blue font-bold uppercase text-xs tracking-[0.2em] bg-brand-light px-4 py-2 rounded-full"
+                    >Nuestros Servicios</span
+                >
+                <h2 class="text-4xl font-bold text-gray-900 mt-6 mb-4">
+                    Soluciones de Limpieza Integral
+                </h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                    Adaptamos nuestros procesos a tus necesidades específicas.
+                    Desde mantenimiento diario hasta limpiezas profundas.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {/* Service Card 1 */}
+                <div
+                    class="group bg-gray-50 rounded-2xl p-2 hover:bg-brand-blue transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 fade-in-section"
+                >
+                    <div
+                        class="bg-white rounded-xl overflow-hidden h-full flex flex-col p-6"
+                    >
+                        <div
+                            class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors"
+                        >
+                            <i class="fas fa-home text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-800">
+                            Casas y Deptos
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-1">
+                            Limpieza detallada de cada rincón. Cocinas, baños,
+                            dormitorios y áreas comunes desinfectadas.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Vidrios
+                                interiores
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Desengrase
+                                cocina
+                            </li>
+                        </ul>
+                        <a
+                            href="#contacto"
+                            class="text-brand-blue font-bold text-sm uppercase tracking-wide group-hover:text-brand-accent transition inline-flex items-center gap-2"
+                        >
+                            Cotizar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                {/* Service Card 2 */}
+                <div
+                    class="group bg-gray-50 rounded-2xl p-2 hover:bg-brand-blue transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 fade-in-section"
+                    style="transition-delay: 100ms;"
+                >
+                    <div
+                        class="bg-white rounded-xl overflow-hidden h-full flex flex-col p-6"
+                    >
+                        <div
+                            class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors"
+                        >
+                            <i class="fas fa-building text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-800">
+                            Oficinas y Pymes
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-1">
+                            Ambientes de trabajo productivos y saludables.
+                            Horarios flexibles para no interrumpir.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Factura
+                                disponible
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Personal
+                                asegurado
+                            </li>
+                        </ul>
+                        <a
+                            href="#contacto"
+                            class="text-brand-blue font-bold text-sm uppercase tracking-wide group-hover:text-brand-accent transition inline-flex items-center gap-2"
+                        >
+                            Cotizar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                {/* Service Card 3 */}
+                <div
+                    class="group bg-gray-50 rounded-2xl p-2 hover:bg-brand-blue transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 fade-in-section"
+                    style="transition-delay: 200ms;"
+                >
+                    <div
+                        class="bg-white rounded-xl overflow-hidden h-full flex flex-col p-6"
+                    >
+                        <div
+                            class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors"
+                        >
+                            <i class="fas fa-couch text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-800">
+                            Tapices y Alfombras
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-1">
+                            Renovación total de textiles con máquinas de
+                            inyección-extracción profesional.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Secado
+                                rápido
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Eliminación
+                                ácaros
+                            </li>
+                        </ul>
+                        <a
+                            href="#contacto"
+                            class="text-brand-blue font-bold text-sm uppercase tracking-wide group-hover:text-brand-accent transition inline-flex items-center gap-2"
+                        >
+                            Cotizar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+                {/* Service Card 4 */}
+                <div
+                    class="group bg-gray-50 rounded-2xl p-2 hover:bg-brand-blue transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 fade-in-section"
+                    style="transition-delay: 300ms;"
+                >
+                    <div
+                        class="bg-white rounded-xl overflow-hidden h-full flex flex-col p-6"
+                    >
+                        <div
+                            class="w-14 h-14 bg-brand-light rounded-2xl flex items-center justify-center text-brand-blue mb-6 group-hover:bg-brand-accent group-hover:text-brand-dark transition-colors"
+                        >
+                            <i class="fas fa-tools text-2xl"></i>
+                        </div>
+                        <h3 class="font-bold text-xl mb-3 text-gray-800">
+                            Fin de Obra / Mudanza
+                        </h3>
+                        <p class="text-gray-600 text-sm mb-6 flex-1">
+                            Limpieza intensiva para entrar a vivir o entregar
+                            inmueble. Retiro de escombros finos.
+                        </p>
+                        <ul class="text-sm text-gray-500 space-y-2 mb-6">
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Lista
+                                para habitar
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <i class="fas fa-check text-green-500"></i> Garantía
+                                entrega
+                            </li>
+                        </ul>
+                        <a
+                            href="#contacto"
+                            class="text-brand-blue font-bold text-sm uppercase tracking-wide group-hover:text-brand-accent transition inline-flex items-center gap-2"
+                        >
+                            Cotizar <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="nosotros" class="py-20 bg-gray-50 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-16 items-center">
+                <div class="lg:w-1/2 fade-in-section">
+                    <span
+                        class="text-brand-accent font-bold tracking-wider text-sm uppercase mb-2 block"
+                        >Confianza Total</span
+                    >
+                    <h2 class="text-4xl font-bold text-gray-900 mb-6">
+                        Lo que dicen nuestros clientes
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Nuestra reputación se construye con cada limpieza. Nos
+                        enorgullece ser la empresa mejor valorada de la región
+                        por nuestra puntualidad, honestidad y resultados.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div
+                            class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-brand-blue"
+                        >
+                            <span
+                                class="text-3xl font-bold text-gray-800 block mb-1"
+                                >98%</span
+                            >
+                            <span class="text-sm text-gray-500"
+                                >Clientes Recurrentes</span
+                            >
+                        </div>
+                        <div
+                            class="p-4 bg-white rounded-xl shadow-sm border-l-4 border-brand-accent"
+                        >
+                            <span
+                                class="text-3xl font-bold text-gray-800 block mb-1"
+                                >5/5</span
+                            >
+                            <span class="text-sm text-gray-500"
+                                >Calificación Promedio</span
+                            >
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="lg:w-1/2 w-full fade-in-section"
+                    style="transition-delay: 200ms;"
+                >
+                    <ReviewCarousel client:visible />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA / CONTACTO (SEO Focus) -->
+    <section
+        id="contacto"
+        class="py-20 bg-brand-dark text-white relative overflow-hidden"
+    >
+        <!-- Decoration -->
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-brand-blue opacity-20 rounded-full filter blur-3xl transform translate-x-1/2 -translate-y-1/2"
+        >
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">
+                ¿Listo para ver tu espacio brillar?
+            </h2>
+            <p class="text-brand-light text-lg mb-10 max-w-2xl mx-auto">
+                Agenda hoy y recibe un 10% de descuento en tu primera limpieza
+                profunda. Cupos limitados para esta semana.
+            </p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a
+                    href="#inicio"
+                    class="bg-white text-brand-dark font-bold py-4 px-10 rounded-xl hover:bg-gray-100 transition shadow-lg transform hover:-translate-y-1"
+                >
+                    Solicitar Presupuesto Online
+                </a>
+                <a
+                    href="https://wa.me/56931216071"
+                    class="bg-green-500 text-white font-bold py-4 px-10 rounded-xl hover:bg-green-600 transition shadow-lg flex items-center justify-center gap-3 transform hover:-translate-y-1"
+                >
+                    <i class="fab fa-whatsapp text-2xl"></i> +56 9 3121 6071
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER ROBUSTO -->
+    <footer class="bg-brand-dark text-gray-400 py-16 border-t border-gray-800">
+        <div class="container mx-auto px-4">
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12"
+            >
+                <!-- Col 1: Brand -->
+                <div class="space-y-4">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="relative">
+                            <i class="fas fa-home text-3xl text-brand-light"
+                            ></i>
+                            <div
+                                class="absolute -bottom-1 -right-2 bg-brand-dark rounded-full p-0.5"
+                            >
+                                <i
+                                    class="fas fa-broom text-sm text-brand-accent"
+                                ></i>
+                            </div>
+                        </div>
+                        <span
+                            class="text-2xl font-black text-white tracking-tighter uppercase italic pr-2"
+                        >
+                            Clear<span
+                                class="bg-gradient-to-r from-brand-accent via-yellow-400 to-yellow-600 bg-clip-text text-transparent inline-block pr-4 py-1"
+                                >Home</span
+                            >
+                        </span>
+                    </div>
+                    <p class="text-sm leading-relaxed text-gray-400">
+                        La solución premium de limpieza en la IV Región.
+                        Transformamos espacios, garantizamos tranquilidad.
+                    </p>
+                </div>
+
+                <!-- Col 2: Enlaces Rápidos -->
+                <div>
+                    <h4
+                        class="text-white font-bold text-lg mb-6 border-b border-gray-700 pb-2 inline-block"
+                    >
+                        Menú
+                    </h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a
+                                href="#inicio"
+                                class="hover:text-brand-accent transition flex items-center gap-2"
+                                ><i class="fas fa-chevron-right text-xs"></i> Inicio</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#servicios"
+                                class="hover:text-brand-accent transition flex items-center gap-2"
+                                ><i class="fas fa-chevron-right text-xs"></i> Servicios</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#nosotros"
+                                class="hover:text-brand-accent transition flex items-center gap-2"
+                                ><i class="fas fa-chevron-right text-xs"></i> Por
+                                qué Nosotros</a
+                            >
+                        </li>
+                        <li>
+                            <a
+                                href="#contacto"
+                                class="hover:text-brand-accent transition flex items-center gap-2"
+                                ><i class="fas fa-chevron-right text-xs"></i> Cotizar</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 3: Servicios -->
+                <div>
+                    <h4
+                        class="text-white font-bold text-lg mb-6 border-b border-gray-700 pb-2 inline-block"
+                    >
+                        Servicios
+                    </h4>
+                    <ul class="space-y-3">
+                        <li
+                            class="hover:text-brand-accent transition cursor-pointer"
+                        >
+                            Limpieza de Casas
+                        </li>
+                        <li
+                            class="hover:text-brand-accent transition cursor-pointer"
+                        >
+                            Limpieza de Oficinas
+                        </li>
+                        <li
+                            class="hover:text-brand-accent transition cursor-pointer"
+                        >
+                            Limpieza Post-Obra
+                        </li>
+                        <li
+                            class="hover:text-brand-accent transition cursor-pointer"
+                        >
+                            Lavado de Alfombras
+                        </li>
+                        <li
+                            class="hover:text-brand-accent transition cursor-pointer"
+                        >
+                            Sanitización
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Col 4: Contacto -->
+                <div>
+                    <h4
+                        class="text-white font-bold text-lg mb-6 border-b border-gray-700 pb-2 inline-block"
+                    >
+                        Contacto
+                    </h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div
+                                class="mt-1 w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-brand-accent shrink-0"
+                            >
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span
+                                >Coquimbo y La Serena,<br />IV Región, Chile</span
+                            >
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-brand-accent shrink-0"
+                            >
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <a
+                                href="tel:+56931216071"
+                                class="hover:text-white transition"
+                                >+56 9 3121 6071</a
+                            >
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center text-brand-accent shrink-0"
+                            >
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <a
+                                href="mailto:contacto@clearhome.cl"
+                                class="hover:text-white transition"
+                                >contacto@clearhome.cl</a
+                            >
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm"
+            >
+                <p>
+                    &copy; {new Date().getFullYear()} ClearHome. Todos los derechos
+                    reservados.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition"
+                        >Política de Privacidad</a
+                    >
+                    <a href="#" class="hover:text-white transition"
+                        >Términos de Servicio</a
+                    >
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <WhatsAppButton />
+    <StickyMobileCTA />
+</Layout>
+```
